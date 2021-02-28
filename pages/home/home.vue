@@ -48,8 +48,8 @@
               class="right-img-item"
               v-for="(item2, i2) in item.product_list"
               :key="i2"
-              v-if="i2 !== 0"
               :url="item2.url"
+              v-if="i2 !== 0"
             >
               <image
                 :src="item2.image_src"
@@ -123,22 +123,22 @@ export default {
     },
     gotoSearch() {
       uni.navigateTo({
-        url: '/subpkg/search/search'
-      })
-    }
-  }
+        url: "/subpkg/search/search",
+      });
+    },
+  },
 };
 </script>
 
 <style lang="scss">
-  .search-box {
-    // 设置定位效果为“吸顶”
-    position: sticky;
-    // 吸顶的“位置”
-    top: 0;
-    // 提高层级，防止被轮播图覆盖
-    z-index: 999;
-  }
+.search-box {
+  // 设置定位效果为“吸顶”
+  position: sticky;
+  // 吸顶的“位置”
+  top: 0;
+  // 提高层级，防止被轮播图覆盖
+  z-index: 999;
+}
 swiper {
   height: 330rpx;
   .swiper-item,
