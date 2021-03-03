@@ -38,12 +38,18 @@
       ...mapGetters('m_cart', ['total'])
     },
     watch: {
-      total(newVal) {
-        const findResult = this.options.find(x => x.text == '购物车')
-        if(findResult) {
-          findResult.info = newVal
-        }
-      }
+       // 定义 total 侦听器，指向一个配置对象
+         total: {
+            // handler 属性用来定义侦听器的 function 处理函数
+            handler(newVal) {
+               const findResult = this.options.find(x => x.text === '购物车')
+               if (findResult) {
+                  findResult.info = newVal
+               }
+            },
+            // immediate 属性用来声明此侦听器，是否在页面初次加载完毕后立即调用
+            immediate: true
+         }
     },
 		data() {
 			return {
