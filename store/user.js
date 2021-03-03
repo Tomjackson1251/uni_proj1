@@ -6,6 +6,7 @@ export default {
   state: () => ({
     // 收货地址
     address: JSON.parse(uni.getStorageSync('address') || '{}'),
+    token: ''
   }),
 
   // 方法
